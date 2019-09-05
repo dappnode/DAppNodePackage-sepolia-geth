@@ -1,10 +1,10 @@
 version: '3.4'
 services:
-  ethchain-geth.public.dappnode.eth:
-    image: 'ethchain-geth.public.dappnode.eth:0.0.3'
+  geth.dnp.dappnode.eth:
+    image: 'geth.dnp.dappnode.eth:0.1.1'
     build: ./build
     volumes:
-      - 'ethchain-geth:/root/.ethereum/ethchain-geth'
+      - 'geth:/root/.ethereum'
     environment:
       - EXTRA_OPTS=
     ports:
@@ -14,4 +14,4 @@ services:
       - '61313:30303/udp'
       - '61314:30304/udp'
 volumes:
-  ethchain-geth: {}
+  geth: {}
