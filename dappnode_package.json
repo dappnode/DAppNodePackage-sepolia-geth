@@ -1,30 +1,47 @@
 {
-  "name": "ethchain-geth.public.dappnode.eth",
-  "version": "0.0.3",
-  "description": "Mainnet Geth",
-  "avatar": "/ipfs/QmTfnrUdZWaMgr2Zi1h1Z7zS5CbYtQZRs72yqKZQHj5fxT",
+  "name": "geth.dnp.dappnode.eth",
+  "version": "0.1.1",
+  "upstreamVersion": "1.9.3",
+  "shortDescription": "Geth is the official Go implementation of the Ethereum protocol.",
+  "description": "Ethereum is a global, open-source platform for decentralized applications where you can write code that controls digital value, runs exactly as programmed, and is accessible anywhere in the world.",
+  "avatar": "/ipfs/QmbxQDuXW8AjrP4UKbG7Aothehvzg5PdLDBn7cdGWjvpmU",
   "type": "library",
   "chain": "ethereum",
   "image": {
-    "path": "ethchain-geth.public.dappnode.eth_0.0.3.tar.xz",
-    "hash": "/ipfs/QmdQF3arvXiEkJ8DSR1auzCqxyhpmv1fGL1acTBQYyZvfr",
-    "size": 16184810,
+    "path": "",
+    "hash": "",
+    "size": "",
     "restart": "always",
     "ports": [
-      "61313:30303",
-      "61313:30303/udp",
-      "61314:30304"
+      "30303",
+      "30303/udp",
+      "30304/udp"
     ],
     "volumes": [
-      "ethchain-geth:/root/.ethereum/ethchain-geth"
+      "data:/root/.ethereum"
     ],
     "environment": [
       "EXTRA_OPTS=--rpcapi eth,net,web3,txpool"
     ]
   },
-  "author": "nanexcool",
+  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "contributors": [
+    "Mariano Conti (nanexcool) (hhttps://github.com/nanexcool)",
+    "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)"
+  ],
+  "categories": [
+    "Blockchain"
+  ],
   "license": "GLP-3.0",
   "links": {
-    "endpoint": "http://my.ethchain-geth.public.dappnode.eth:8545"
+    "endpoint": "http://geth.dappnode:8545",
+    "homepage": "https://github.com/dappnode/DAppNodePackage-geth#readme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dappnode/DAppNodePackage-geth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dappnode/DAppNodePackage-geth/issues"
   }
 }
