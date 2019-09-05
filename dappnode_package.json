@@ -1,0 +1,30 @@
+{
+  "name": "ethchain-geth.public.dappnode.eth",
+  "version": "0.0.3",
+  "description": "Mainnet Geth",
+  "avatar": "/ipfs/QmTfnrUdZWaMgr2Zi1h1Z7zS5CbYtQZRs72yqKZQHj5fxT",
+  "type": "library",
+  "chain": "ethereum",
+  "image": {
+    "path": "ethchain-geth.public.dappnode.eth_0.0.3.tar.xz",
+    "hash": "/ipfs/QmdQF3arvXiEkJ8DSR1auzCqxyhpmv1fGL1acTBQYyZvfr",
+    "size": 16184810,
+    "restart": "always",
+    "ports": [
+      "61313:30303",
+      "61313:30303/udp",
+      "61314:30304"
+    ],
+    "volumes": [
+      "ethchain-geth:/root/.ethereum/ethchain-geth"
+    ],
+    "environment": [
+      "EXTRA_OPTS=--rpcapi eth,net,web3,txpool"
+    ]
+  },
+  "author": "nanexcool",
+  "license": "GLP-3.0",
+  "links": {
+    "endpoint": "http://my.ethchain-geth.public.dappnode.eth:8545"
+  }
+}
