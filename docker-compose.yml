@@ -6,12 +6,11 @@ services:
     volumes:
       - 'geth:/root/.ethereum'
     environment:
-      - EXTRA_OPTS=
+      - EXTRA_OPTS=--rpcapi eth,net,web3,txpool
     ports:
-      - '127.0.0.1:8546:8546'
-      - '127.0.0.1:8545:8545'
-      - '61313:30303'
-      - '61313:30303/udp'
-      - '61314:30304/udp'
+      - '30303'
+      - '30303/udp'
+      - '30304/udp'
+    restart: always
 volumes:
   geth: {}
