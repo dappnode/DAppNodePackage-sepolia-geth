@@ -1,17 +1,16 @@
 version: '3.4'
 services:
-  ethchain-geth.public.dappnode.eth:
-    image: 'ethchain-geth.public.dappnode.eth:0.0.3'
+  geth.dnp.dappnode.eth:
+    image: 'geth.dnp.dappnode.eth:0.1.1'
     build: ./build
     volumes:
-      - 'ethchain-geth:/root/.ethereum/ethchain-geth'
+      - 'geth:/root/.ethereum'
     environment:
-      - EXTRA_OPTS=
+      - EXTRA_OPTS=--rpcapi eth,net,web3,txpool
     ports:
-      - '127.0.0.1:8546:8546'
-      - '127.0.0.1:8545:8545'
-      - '61313:30303'
-      - '61313:30303/udp'
-      - '61314:30304/udp'
+      - '30303'
+      - '30303/udp'
+      - '30304/udp'
+    restart: always
 volumes:
-  ethchain-geth: {}
+  geth: {}
