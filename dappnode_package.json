@@ -1,6 +1,6 @@
 {
   "name": "geth.dnp.dappnode.eth",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "upstreamVersion": "v1.9.8",
   "shortDescription": "Geth is the official Go implementation of the Ethereum protocol.",
   "description": "Ethereum is a global, open-source platform for decentralized applications where you can write code that controls digital value, runs exactly as programmed, and is accessible anywhere in the world.",
