@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   geth.dnp.dappnode.eth:
-    image: 'geth.dnp.dappnode.eth:0.1.3'
+    image: 'geth.dnp.dappnode.eth:0.1.4'
     build: ./build
     volumes:
       - 'geth:/root/.ethereum'
