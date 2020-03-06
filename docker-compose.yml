@@ -1,12 +1,13 @@
 version: '3.4'
 services:
   geth.dnp.dappnode.eth:
-    image: 'geth.dnp.dappnode.eth:0.1.4'
+    image: 'geth.dnp.dappnode.eth:0.1.5'
     build: ./build
     volumes:
       - 'geth:/root/.ethereum'
     environment:
       - 'EXTRA_OPTS=--rpcapi eth,net,web3,txpool'
+      - SYNCMODE
     ports:
       - '30303'
       - 30303/udp
