@@ -11,4 +11,5 @@ RUN apk --no-cache add \
 
 COPY --from=geth /usr/local/bin/geth /usr/local/bin/geth
 
-ENTRYPOINT geth --rpc --rpcaddr 0.0.0.0 --rpccorsdomain "*" --rpcvhosts "*" --ws --wsorigins "*" --wsaddr 0.0.0.0 $EXTRA_OPTS
+ENV SYNCMODE fast
+ENTRYPOINT geth --rpc --rpcaddr 0.0.0.0 --rpccorsdomain "*" --rpcvhosts "*" --ws --wsorigins "*" --wsaddr 0.0.0.0 --syncmode ${SYNCMODE:-fast} --nousb $EXTRA_OPTS
