@@ -1,0 +1,123 @@
+name: Remote Dispatch Action Initiator
+
+on:
+  repository_dispatch:
+
+jobs:
+  new_version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: New remote repository event
+        id: dispatch-event
+        run: |
+          echo "Event '${{ github.event.action }}' with tag: '${{ github.event.client_payload.tag }}'"
+          echo "::set-output name=TAG::${{ github.event.client_payload.tag }}"
+          echo VERSION=${{ github.event.client_payload.tag }} > .env
+      
+      - name: Setup nodejs
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: dappnodesdk install
+        run: npm install -g @dappnode/dappnodesdk
+        
+      - name: Get next DAppNodePackage release
+        id: next-release
+        run: echo "::set-output name=DNP_VERSION::$(dappnodesdk next patch -p remote)"
+        
+      - name: Check and delete if a release already exists
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: | 
+          RELEASE_ID=$(curl https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ steps.dispatch-event.outputs.TAG }} | jq .id || echo "") 
+          PRE_RELEASE=$(curl -s https://api.github.com/repos/dappnode/${{ github.repository }}releases/tags/${{ steps.dispatch-event.outputs.TAG }} | jq .prerelease)
+          if [ $PRE_RELEASE == "false" ];then
+            exit 1
+          elif [ ! -z "$RELEASE_ID" ];then
+            curl -H "Authorization: token ${GITHUB_TOKEN}" -X DELETE https://api.github.com/repos/${{ github.repository }}/releases/${RELEASE_ID}
+          fi
+
+      - name: Docker-Compose Build
+        run: |
+          docker-compose build
+          
+      - name: dappnodesdk publish
+        id: dappnodesdk-publish
+        run: |
+          sed -i "s/upstreamVersion\":.*,/upstreamVersion\": \"${{ steps.dispatch-event.outputs.TAG }}\",/g" dappnode_package.json 
+          dappnodesdk publish patch -p remote
+          echo "::set-output name=CONTENT_HASH::$(cat ./build_${{ steps.next-release.outputs.DNP_VERSION }}/content-hash | sed 's/\//%2F/g')"
+          echo "::set-output name=PACKAGE_NAME::$(cat dappnode_package.json | jq .name | tr -d "\"")"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          release_name: v${{ steps.next-release.outputs.DNP_VERSION }}
+          tag_name: ${{ steps.dispatch-event.outputs.TAG }}
+          body: |
+            # ${{ steps.dispatch-event.outputs.TAG }}
+            You can execute a transaction to publish this package from the Admin UI with Metamask by following this pre-filled [link](http://my.dappnode/#/sdk/publish/r=${{ steps.dappnodesdk-publish.outputs.PACKAGE_NAME }}&v=${{ steps.next-release.outputs.DNP_VERSION }}&h=${{ steps.dappnodesdk-publish.outputs.CONTENT_HASH }})
+          draft: false
+          prerelease: true
+
+      - name: Upload release .xz file
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./build_${{ steps.next-release.outputs.DNP_VERSION }}/${{ steps.dappnodesdk-publish.outputs.PACKAGE_NAME }}_${{ steps.next-release.outputs.DNP_VERSION }}.tar.xz
+          asset_name: ${{ steps.dappnodesdk-publish.outputs.PACKAGE_NAME }}_${{ steps.next-release.outputs.DNP_VERSION }}.tar.xz
+          asset_content_type: 'application/octet-stream'
+
+      - name: Upload release avatar file
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./build_${{ steps.next-release.outputs.DNP_VERSION }}/avatar.png
+          asset_name: avatar.png
+          asset_content_type: 'application/octet-stream'
+
+      - name: Upload release dappnode_package.json file
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./build_${{ steps.next-release.outputs.DNP_VERSION }}/dappnode_package.json
+          asset_name: dappnode_package.json
+          asset_content_type: 'application/octet-stream'
+      
+      - name: Upload release docker-compose.yml file
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./build_${{ steps.next-release.outputs.DNP_VERSION }}/docker-compose.yml
+          asset_name: docker-compose.yml
+          asset_content_type: 'application/octet-stream'
+      
+      - name: Upload release content-hash file
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./build_${{ steps.next-release.outputs.DNP_VERSION }}/content-hash
+          asset_name: content-hash
+          asset_content_type: 'application/octet-stream'
+      
+      - name: Commit changes
+        run: |
+            git config --global user.email "eduadiez@gmail.com"
+            git config --global user.name "Eduardo"
+            git commit -am "Github action update"
+            git push

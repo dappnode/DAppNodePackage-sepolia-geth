@@ -1,4 +1,5 @@
-FROM ethereum/client-go:v1.9.13 as geth
+ARG VERSION
+FROM ethereum/client-go:$VERSION as geth
 
 # Pull Parity into a second stage deploy alpine container
 FROM alpine:edge

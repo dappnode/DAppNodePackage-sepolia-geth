@@ -1,0 +1,31 @@
+name: Update DAppNode package
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/5 * * * *'
+jobs:
+  dappnodepackage-update:
+    name: Trigger the DAppNode Package update
+    runs-on: ubuntu-latest
+    env: 
+      DISPATCH_REPO: dappnode/DAppNodePackage-geth
+      UPSTREAM_REPO: ethereum/go-ethereum
+    steps:
+    - name: Get the tag
+      id: get_tag
+      run: |
+        UPSTREAM_TAG=$(curl https://api.github.com/repos/$UPSTREAM_REPO/releases/latest | jq .tag_name | tr -d "\"" )
+        DNP_TAG=$(curl https://api.github.com/repos/$DISPATCH_REPO/releases/tags/$UPSTREAM_TAG | jq .tag_name | tr -d "\"" )
+        if [ $UPSTREAM_TAG != $DNP_TAG ];then
+            echo "::set-output name=trigger_update::true"
+        fi
+        echo ::set-output name=TAG::$UPSTREAM_TAG
+    - name: Send dispatch event to the DAppNode Package repository
+      if: steps.get_tag.outputs.trigger_update == 'true'
+      run: |
+        curl -v -X POST -u "${{ secrets.PAT_GITHUB }}" \
+        -H "Accept: application/vnd.github.everest-preview+json" \
+        -H "Content-Type: application/json" \
+        --data '{"event_type":"new_release", "client_payload": { "tag":"${{ steps.get_tag.outputs.TAG }}"}}' \
+        https://api.github.com/repos/$DISPATCH_REPO/dispatches
