@@ -24,7 +24,7 @@ jobs:
     - name: Send dispatch event to the DAppNode Package repository
       if: steps.get_tag.outputs.trigger_update == 'true'
       run: |
-        curl -v -X POST -u "${{ secrets.GITHUB_TOKEN }}" \
+        curl -v -X POST -u "${{ secrets.PAT_GITHUB }}" \
         -H "Accept: application/vnd.github.everest-preview+json" \
         -H "Content-Type: application/json" \
         --data '{"event_type":"new_release", "client_payload": { "tag":"${{ steps.get_tag.outputs.TAG }}"}}' \
