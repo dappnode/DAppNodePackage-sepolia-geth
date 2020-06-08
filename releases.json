@@ -38,5 +38,13 @@
       "remote": "Thu, 14 May 2020 16:22:40 GMT"
     },
     "link": "http://my.dappnode/#/sdk/publish/r=geth.dnp.dappnode.eth&v=0.1.6&h=%2Fipfs%2FQmazbxJNXNn5kUe3PHRiMpJtvf91o6SUM4uFphj9znuVt3"
+  },
+  "0.1.7": {
+    "hash": "/ipfs/Qmd7jLvxVmUziFFVV9M6R4Svn7KGiM1VGg6kymbCknCgF1",
+    "type": "directory",
+    "uploadedTo": {
+      "remote": "Mon, 08 Jun 2020 17:12:10 GMT"
+    },
+    "link": "http://my.dappnode/#/sdk/publish/r=geth.dnp.dappnode.eth&v=0.1.7&h=%2Fipfs%2FQmd7jLvxVmUziFFVV9M6R4Svn7KGiM1VGg6kymbCknCgF1"
   }
 }
