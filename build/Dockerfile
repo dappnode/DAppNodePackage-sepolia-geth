@@ -1,5 +1,5 @@
-ARG VERSION
-FROM ethereum/client-go:$VERSION as geth
+ARG UPSTREAM_VERSION
+FROM ethereum/client-go:${UPSTREAM_VERSION} as geth
 
 # Pull Parity into a second stage deploy alpine container
 FROM alpine:edge
