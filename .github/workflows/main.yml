@@ -1,0 +1,31 @@
+name: "Main"
+on:
+  pull_request:
+  push:
+    branches:
+      - "master"
+      - "v[0-9]+.[0-9]+.[0-9]+"
+    paths-ignore:
+      - "README.md"
+
+jobs:
+  build-test:
+    runs-on: ubuntu-16.04
+    name: Build test
+    if: github.event_name != 'push'
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker-compose build
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Publish
+        run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset --timeout 2h
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEVELOPER_ADDRESS: "0xf35960302a07022aba880dffaec2fdd64d5bf1c1"
