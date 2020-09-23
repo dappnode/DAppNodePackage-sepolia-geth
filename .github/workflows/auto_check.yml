@@ -3,7 +3,7 @@ name: Update DAppNode package
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/5 * * * *'
+    - cron:  '00 */12 * * *'
 jobs:
   dappnodepackage-update:
     name: Trigger the DAppNode Package update
