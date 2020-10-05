@@ -12,7 +12,7 @@ jobs:
   build-test:
     runs-on: ubuntu-16.04
     name: Build test
-    if: github.event_name != 'push'
+    if: github.event_name == 'push' || github.event_name == 'repository_dispatch'
     steps:
       - uses: actions/checkout@v2
       - run: docker-compose build
