@@ -3,7 +3,8 @@ name: Update DAppNode package
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/5 * * * *'
+    # - cron:  '00 */4 * * *'
+    - cron:  '* * * * *'
 jobs:
   dappnodepackage-update:
     name: Trigger the DAppNode Package update
@@ -12,15 +13,17 @@ jobs:
       DISPATCH_REPO: dappnode/DAppNodePackage-geth
       UPSTREAM_REPO: ethereum/go-ethereum
     steps:
+    - uses: actions/checkout@v2
     - name: Get the tag
       id: get_tag
       run: |
-        UPSTREAM_TAG=$(curl https://api.github.com/repos/$UPSTREAM_REPO/releases/latest | jq .tag_name | tr -d "\"" )
-        DNP_TAG=$(curl https://api.github.com/repos/$DISPATCH_REPO/releases/tags/$UPSTREAM_TAG | jq .tag_name | tr -d "\"" )
-        if [ $UPSTREAM_TAG != $DNP_TAG ];then
+        UPSTREAM_TAG=$(curl https://api.github.com/repos/$UPSTREAM_REPO/tags | jq .[0].name | tr -d "\"" )
+        DNP_UPSTREAM=$(cat dappnode_package.json | jq .upstreamVersion | tr -d "\"" )
+        if [ $UPSTREAM_TAG != $DNP_UPSTREAM ];then
             echo "::set-output name=trigger_update::true"
         fi
         echo ::set-output name=TAG::$UPSTREAM_TAG
+      
     - name: Send dispatch event to the DAppNode Package repository
       if: steps.get_tag.outputs.trigger_update == 'true'
       run: |

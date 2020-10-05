@@ -15,6 +15,10 @@
     "Blockchain"
   ],
   "license": "GLP-3.0",
+  "architectures": [
+    "linux/amd64",
+    "linux/arm64"
+  ],
   "links": {
     "endpoint": "http://geth.dappnode:8545",
     "homepage": "https://github.com/dappnode/DAppNodePackage-geth#readme"
