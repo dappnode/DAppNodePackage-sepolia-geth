@@ -55,9 +55,9 @@
     "link": "http://my.dappnode/#/sdk/publish/r=geth.dnp.dappnode.eth&v=0.1.8&h=%2Fipfs%2FQmUf1uzqZdXyKt4YB96nr1F9GtxUWnPu8hSs7WXJnoc5Cj"
   },
   "0.1.9": {
-    "hash": "/ipfs/QmbpQoSXzPcBwm1LUeVMPosgsVUf772pN32xjDyxWnPEHT",
+    "hash": "/ipfs/QmPF4HJoNmJkoFBedv2CfVQGdPECYTmnZU3kCTodN4vkqg",
     "uploadedTo": {
-      "remote": "Fri, 07 Aug 2020 13:19:24 GMT"
+      "dappnode": "Wed, 25 Nov 2020 09:18:56 GMT"
     },
     "link": "http://my.dappnode/#/sdk/publish/r=geth.dnp.dappnode.eth&v=0.1.9&h=%2Fipfs%2FQmbpQoSXzPcBwm1LUeVMPosgsVUf772pN32xjDyxWnPEHT"
   }
