@@ -10,7 +10,7 @@
     "linux/arm64"
   ],
   "chain": "ethereum",
-  "dockerTimeout": "5min",
+  "dockerTimeout": "20min",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
     "Mariano Conti (nanexcool) (hhttps://github.com/nanexcool)",
