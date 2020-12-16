@@ -5,7 +5,7 @@ services:
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: v1.9.24
+        UPSTREAM_VERSION: v1.9.25
     volumes:
       - "geth:/root/.ethereum"
     environment:
@@ -15,6 +15,6 @@ services:
       - "30303"
       - 30303/udp
       - 30304/udp
-    restart: always
+    restart: unless-stopped
 volumes:
   geth: {}
