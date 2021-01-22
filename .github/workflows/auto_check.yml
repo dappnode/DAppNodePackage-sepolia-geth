@@ -1,41 +1,17 @@
-name: Update DAppNode package
+name: Bump upstream version
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '00 */4 * * *'
+    - cron: "00 */4 * * *"
+  push:
+    branches:
+      - "master"
+  workflow_dispatch:
 jobs:
-  dappnodepackage-update:
-    name: Trigger the DAppNode Package update
+  bump-upstream:
     runs-on: ubuntu-latest
-    env: 
-      DISPATCH_REPO: dappnode/DAppNodePackage-geth
-      UPSTREAM_REPO: ethereum/go-ethereum
     steps:
-    - uses: actions/checkout@v2
-    - name: Get the tag
-      id: get_tag
-      run: |
-        UPSTREAM_TAG=$(curl https://api.github.com/repos/$UPSTREAM_REPO/tags | jq .[0].name | tr -d "\"" )
-        DNP_UPSTREAM=$(cat dappnode_package.json | jq .upstreamVersion | tr -d "\"" )
-        if [ $UPSTREAM_TAG != $DNP_UPSTREAM ];then
-            echo "::set-output name=trigger_update::true"
-        fi
-        echo ::set-output name=TAG::$UPSTREAM_TAG
-    - name: update UPSTREAM_VERSION and commit changes
-      if: steps.get_tag.outputs.trigger_update == 'true'
-      run: |
-        sed -i "s/        UPSTREAM_VERSION: .*/        UPSTREAM_VERSION: ${{ steps.get_tag.outputs.TAG }}/g" docker-compose.yml
-        sed -i "s/  \"upstreamVersion\": \".*\",/  \"upstreamVersion\": \"${{ steps.get_tag.outputs.TAG }}\",/g" dappnode_package.json
-        git config --global user.email "eduadiez@gmail.com"
-        git config --global user.name "Eduardo"
-        git commit -am "Github action bumped version to ${{ steps.get_tag.outputs.TAG }}"
-        git push
-    - name: Send dispatch event to the DAppNode Package repository
-      if: steps.get_tag.outputs.trigger_update == 'true'
-      run: |
-        curl -v -X POST -u "${{ secrets.PAT_GITHUB }}" \
-        -H "Accept: application/vnd.github.everest-preview+json" \
-        -H "Content-Type: application/json" \
-        --data '{"event_type":"new_release", "client_payload": { "tag":"${{ steps.get_tag.outputs.TAG }}"}}' \
-        https://api.github.com/repos/$DISPATCH_REPO/dispatches
+      - uses: actions/checkout@v2
+      - uses: dappnode/dnp-bump-upstream-action@v1
+        with:
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
