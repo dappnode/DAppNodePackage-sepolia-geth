@@ -6,12 +6,14 @@ on:
   push:
     branches:
       - "master"
-  workflow_dispatch:
+
 jobs:
-  bump-upstream:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: dappnode/dnp-bump-upstream-action@v1
-        with:
-          github_token: ${{ secrets.PERSONAL_TOKEN }}
+      - run: npx @dappnode/dappnodesdk github-action bump-upstream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PINATA_API_KEY: ${{ secrets.PINATA_API_KEY }}
+          PINATA_SECRET_API_KEY: ${{ secrets.PINATA_SECRET_API_KEY }}

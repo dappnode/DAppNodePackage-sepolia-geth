@@ -3,13 +3,11 @@
   "version": "0.1.12",
   "upstreamVersion": "v1.9.23",
   "upstreamRepo": "ethereum/go-ethereum",
+  "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Geth is the official Go implementation of the Ethereum protocol.",
   "description": "Ethereum is a global, open-source platform for decentralized applications where you can write code that controls digital value, runs exactly as programmed, and is accessible anywhere in the world.",
   "type": "library",
-  "architectures": [
-    "linux/amd64",
-    "linux/arm64"
-  ],
+  "architectures": ["linux/amd64", "linux/arm64"],
   "chain": "ethereum",
   "dockerTimeout": "20min",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
@@ -17,9 +15,7 @@
     "Mariano Conti (nanexcool) (hhttps://github.com/nanexcool)",
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)"
   ],
-  "categories": [
-    "Blockchain"
-  ],
+  "categories": ["Blockchain"],
   "license": "GLP-3.0",
   "links": {
     "endpoint": "http://geth.dappnode:8545",
