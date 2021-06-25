@@ -1,11 +1,11 @@
 version: "3.4"
 services:
   geth.dnp.dappnode.eth:
-    image: "geth.dnp.dappnode.eth:0.1.12"
+    image: "geth.dnp.dappnode.eth:0.1.17"
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: v1.10.3
+        UPSTREAM_VERSION: v1.10.4
     volumes:
       - "geth:/root/.ethereum"
     environment:
