@@ -16,7 +16,7 @@
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)"
   ],
   "categories": ["Blockchain"],
-  "license": "GLP-3.0",
+  "license": "GPL-3.0",
   "links": {
     "endpoint": "http://geth.dappnode:8545",
     "homepage": "https://github.com/dappnode/DAppNodePackage-geth#readme"
