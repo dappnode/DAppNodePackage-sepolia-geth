@@ -1,6 +1,6 @@
 # DAppNode package _Sepolia_
 
-![Avatar](avatar-sepolia-geth)
+![Avatar](avatar-sepolia-geth.png)
 
 Sepolia Testnet is a new, official Ethereum proof-of-work testnet replacing Ropsten and Morden.
 
