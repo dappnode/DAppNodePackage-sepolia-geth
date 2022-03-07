@@ -1,31 +1,32 @@
 {
-  "name": "geth.dnp.dappnode.eth",
-  "version": "0.1.17",
+  "name": "sepolia-geth.dnp.dappnode.eth",
+  "version": "0.1.0",
   "upstreamVersion": "v1.10.16",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
-  "shortDescription": "Geth is the official Go implementation of the Ethereum protocol.",
-  "description": "Ethereum is a global, open-source platform for decentralized applications where you can write code that controls digital value, runs exactly as programmed, and is accessible anywhere in the world.",
+  "shortDescription": "A novel PoW-testing network for Ethereum",
+  "description": "Geth version for the Sepolia Testnet. Sepolia Testnet is the new, official proof-of-work Ethereum testnet.",
   "type": "library",
-  "architectures": ["linux/amd64", "linux/arm64"],
   "chain": "ethereum",
-  "dockerTimeout": "20min",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
-    "Mariano Conti (nanexcool) (hhttps://github.com/nanexcool)",
-    "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)"
+    "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
+    "Stefaan Ponnet (https://github.com/sponnet)"
+    "Afri Schoedon (https://github.com/q9f)"
   ],
-  "categories": ["Blockchain"],
-  "license": "GPL-3.0",
+  "categories": ["Developer tools"],
+  "keywords": ["ethereum", "testnet", "geth", "sepolia", "pow"],
+  "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
-    "endpoint": "http://geth.dappnode:8545",
-    "homepage": "https://github.com/dappnode/DAppNodePackage-geth#readme"
+    "homepage": "https://github.com/q9f/DAppNodePackage-sepolia-geth#readme",
+    "api": "http://sepolia-geth.dappnode:8545"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dappnode/DAppNodePackage-geth.git"
+    "url": "https://github.com/q9f/DAppNodePackage-sepolia-geth.git"
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-geth/issues"
-  }
+    "url": "https://github.com/q9f/DAppNodePackage-sepolia-geth/issues"
+  },
+  "license": "GPL-3.0"
 }
