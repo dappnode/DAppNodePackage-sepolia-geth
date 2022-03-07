@@ -1,20 +1,20 @@
 version: "3.4"
 services:
-  geth.dnp.dappnode.eth:
-    image: "geth.dnp.dappnode.eth:0.1.17"
+  sepolia-geth.dnp.dappnode.eth:
+    image: "sepolia-geth.dnp.dappnode.eth:0.4.12"
     build:
       context: ./build
       args:
         UPSTREAM_VERSION: v1.10.16
     volumes:
-      - "geth:/root/.ethereum"
-    environment:
-      - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool"
-      - SYNCMODE
+      - "sepolia:/sepolia"
     ports:
       - "30303"
       - 30303/udp
       - 30304/udp
-    restart: unless-stopped
+    restart: always
+    environment:
+      - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool"
+      - SYNCMODE
 volumes:
-  geth: {}
+  sepolia: {}
