@@ -1,5 +1,5 @@
 {
-  "name": "sepolia-geth.dnp.dappnode.eth",
+  "name": "sepolia-geth.public.dappnode.eth",
   "version": "0.1.0",
   "upstreamVersion": "v1.10.16",
   "upstreamRepo": "ethereum/go-ethereum",

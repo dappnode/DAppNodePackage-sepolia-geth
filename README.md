@@ -1,5 +1,14 @@
 # DAppNode package _Sepolia_
 
+```
+DNP (DAppNode Package) built and uploaded
+Release hash : /ipfs/Qmaq8NbxDBsUK5De4XQy9TH19qcKNuypoLSUkMT94qWRwQ
+http://my.dappnode/#/installer/%2Fipfs%2FQmaq8NbxDBsUK5De4XQy9TH19qcKNuypoLSUkMT94qWRwQ
+```
+
+* http://my.dappnode/#/installer/%2Fipfs%2FQmaq8NbxDBsUK5De4XQy9TH19qcKNuypoLSUkMT94qWRwQ
+* http://dappnode.local/#/installer/%2Fipfs%2FQmaq8NbxDBsUK5De4XQy9TH19qcKNuypoLSUkMT94qWRwQ
+
 ![Avatar](avatar-sepolia-geth.png)
 
 Sepolia Testnet is a new, official Ethereum proof-of-work testnet replacing Ropsten and Morden.
