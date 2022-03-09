@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   sepolia-geth.public.dappnode.eth:
-    image: "sepolia-geth.public.dappnode.eth:0.1.1"
+    image: "sepolia-geth.public.dappnode.eth:0.1.2"
     build:
       context: ./build
       args:

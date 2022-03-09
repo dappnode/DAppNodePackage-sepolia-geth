@@ -1,14 +1,14 @@
 # DAppNode package _Sepolia_ (Geth)
 
 Install without package manager by looking up the package IPFS hash:
-* http://my.dappnode/#/installer/%2Fipfs%2FQmYQaJWku2PqbSFDDc9cw2FHSC64yNYTvmS5Zdv8CLHDD9 (WIFI)
-* http://dappnode.local/#/installer/%2Fipfs%2FQmYQaJWku2PqbSFDDc9cw2FHSC64yNYTvmS5Zdv8CLHDD9 (LAN)
+* http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP (WIFI)
+* http://dappnode.local/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP (LAN)
 
 Signed IPFS hash for verification:
 ```
 DNP (DAppNode Package) built and uploaded
-Release hash : /ipfs/QmYQaJWku2PqbSFDDc9cw2FHSC64yNYTvmS5Zdv8CLHDD9
-http://my.dappnode/#/installer/%2Fipfs%2FQmYQaJWku2PqbSFDDc9cw2FHSC64yNYTvmS5Zdv8CLHDD9
+Release hash : /ipfs/QmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP
+http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP
 ```
 
 ![Avatar](avatar-sepolia-geth.png)

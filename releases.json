@@ -4,5 +4,17 @@
     "uploadedTo": {
       "http://dappnode.local:5001": "Wed, 09 Mar 2022 11:31:11 GMT"
     }
+  },
+  "0.1.1": {
+    "hash": "/ipfs/Qmca9U24Z2wJTrysoWZ1EuEAAcLUYXb7E7kaB2vCStNL1b",
+    "uploadedTo": {
+      "http://dappnode.local:5001": "Wed, 09 Mar 2022 17:09:01 GMT"
+    }
+  },
+  "0.1.2": {
+    "hash": "/ipfs/QmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP",
+    "uploadedTo": {
+      "http://dappnode.local:5001": "Wed, 09 Mar 2022 17:13:42 GMT"
+    }
   }
 }

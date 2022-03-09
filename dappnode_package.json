@@ -1,6 +1,6 @@
 {
   "name": "sepolia-geth.public.dappnode.eth",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "upstreamVersion": "v1.10.16",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
@@ -33,7 +33,7 @@
       "name": "Sepolia Geth JSON-RPC (WS)",
       "description": "WS-JSON-RPC endpoint for Sepolia testnet",
       "serviceName": "sepolia-geth-ws",
-      "port": 8545,
+      "port": 8546,
       "exposeByDefault": false
     }
   ],
