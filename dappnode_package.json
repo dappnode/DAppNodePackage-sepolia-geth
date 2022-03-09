@@ -1,6 +1,6 @@
 {
   "name": "sepolia-geth.public.dappnode.eth",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "upstreamVersion": "v1.10.16",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
@@ -8,11 +8,11 @@
   "description": "Geth version for the Sepolia Testnet. Sepolia Testnet is the new, official proof-of-work Ethereum testnet.",
   "type": "library",
   "chain": "ethereum",
-  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "author": "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "Stefaan Ponnet (https://github.com/sponnet)",
-    "Afri Schoedon (https://github.com/q9f)"
+    "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)"
   ],
   "categories": ["Developer tools"],
   "keywords": ["ethereum", "testnet", "geth", "sepolia", "pow"],
