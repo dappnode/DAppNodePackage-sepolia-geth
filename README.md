@@ -1,5 +1,13 @@
 # DAppNode package _Sepolia_ (Geth)
 
+![Avatar](avatar-sepolia-geth.png)
+
+Sepolia Testnet is a new, official Ethereum proof-of-work testnet replacing Ropsten and Morden.
+
+More information about the official Ethereum testnets can be found here: [ethereum/pm#460](https://github.com/ethereum/pm/issues/460)
+
+### Installation
+
 Install without package manager by looking up the package IPFS hash:
 * http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP (WIFI)
 * http://dappnode.local/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP (LAN)
@@ -11,11 +19,15 @@ Release hash : /ipfs/QmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP
 http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP
 ```
 
-![Avatar](avatar-sepolia-geth.png)
+### APIs
 
-Sepolia Testnet is a new, official Ethereum proof-of-work testnet replacing Ropsten and Morden.
+The following JSON-RPC APIs are enabled by default:
+* `http://sepolia-geth.dappnode:8545`
+* `ws://sepolia-geth.dappnode:8546`
 
-More information about the official Ethereum testnets can be found here: [ethereum/pm#460](https://github.com/ethereum/pm/issues/460)
+To expose these publicly, go to the package's network configuration and create the following entries:
+* Subdomain: `sepolia-geth`, Port: `8545`
+* Subdomain: `sepolia-geth-ws`, Port: `8546`
 
 ### Manteinance
 
