@@ -1,11 +1,11 @@
 version: "3.4"
 services:
   sepolia-geth.public.dappnode.eth:
-    image: "sepolia-geth.public.dappnode.eth:0.1.2"
+    image: "sepolia-geth.public.dappnode.eth:0.1.3"
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: v1.10.16
+        UPSTREAM_VERSION: v1.10.20
     volumes:
       - "sepolia:/sepolia"
     ports:

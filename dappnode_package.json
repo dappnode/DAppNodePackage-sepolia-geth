@@ -1,7 +1,7 @@
 {
   "name": "sepolia-geth.public.dappnode.eth",
-  "version": "0.1.2",
-  "upstreamVersion": "v1.10.16",
+  "version": "0.1.3",
+  "upstreamVersion": "v1.10.20",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "A novel PoW-testing network for Ethereum",
@@ -18,7 +18,7 @@
   "keywords": ["ethereum", "testnet", "geth", "sepolia", "pow"],
   "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
-    "homepage": "https://github.com/q9f/DAppNodePackage-sepolia-geth#readme",
+    "homepage": "https://github.com/dappnode/DAppNodePackage-sepolia-geth#readme",
     "api": "http://sepolia-geth.dappnode:8545"
   },
   "exposable": [
@@ -39,10 +39,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/q9f/DAppNodePackage-sepolia-geth.git"
+    "url": "https://github.com/dappnode/DAppNodePackage-sepolia-geth.git"
   },
   "bugs": {
-    "url": "https://github.com/q9f/DAppNodePackage-sepolia-geth/issues"
+    "url": "https://github.com/dappnode/DAppNodePackage-sepolia-geth/issues"
   },
   "license": "GPL-3.0"
 }
