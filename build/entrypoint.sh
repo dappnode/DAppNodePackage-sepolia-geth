@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [[ -n $OVERRIDE_TTD ]] && [[ $EXTRA_OPTS != *"--override.terminaltotaldifficulty"* ]]; then
   EXTRA_OPTS="--override.terminaltotaldifficulty=${OVERRIDE_TTD} ${EXTRA_OPTS}"
