@@ -2,4 +2,8 @@ ARG UPSTREAM_VERSION
 
 FROM ethereum/client-go:${UPSTREAM_VERSION}
 
-ENTRYPOINT geth --datadir /sepolia --sepolia --http --http.addr 0.0.0.0 --http.corsdomain "*" --http.vhosts "*" --ws --ws.origins "*" --ws.addr 0.0.0.0 --syncmode ${SYNCMODE:-snap} --metrics --metrics.addr 0.0.0.0 $EXTRA_OPTIONS
+COPY jwtsecret /jwtsecret
+COPY entrypoint.sh /usr/local/bin
+RUN  chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
