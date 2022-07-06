@@ -6,6 +6,7 @@ fi
 
 exec -c geth --datadir /sepolia \ 
     --sepolia \
+    --port ${P2P_PORT}
     --http \
     --http.addr 0.0.0.0 \
     --http.corsdomain "*" \
