@@ -1,12 +1,12 @@
 #!/bin/sh
 
-if [[ -n $OVERRIDE_TTD ]] && [[ $EXTRA_OPTS != *"--override.terminaltotaldifficulty"* ]]; then
-  EXTRA_OPTS="--override.terminaltotaldifficulty=${OVERRIDE_TTD} ${EXTRA_OPTS}"
+if [[ -n $OVERRIDE_TTD ]] && [[ -n "${EXTRA_OPTIONS##*"--override.terminaltotaldifficulty"*}" ]]; then
+  EXTRA_OPTIONS="$EXTRA_OPTIONS --override.terminaltotaldifficulty ${OVERRIDE_TTD}"
 fi
 
-exec -c geth --datadir /sepolia \ 
+exec geth --datadir /sepolia \
     --sepolia \
-    --port ${P2P_PORT}
+    --port ${P2P_PORT} \
     --http \
     --http.addr 0.0.0.0 \
     --http.corsdomain "*" \
@@ -18,7 +18,7 @@ exec -c geth --datadir /sepolia \
     --authrpc.port 8551 \
     --authrpc.vhosts "*" \
     --authrpc.jwtsecret "/jwtsecret" \
-    --syncmode ${SYNCMODE:-snap} \ 
+    --syncmode ${SYNCMODE:-snap} \
     --metrics \
     --metrics.addr 0.0.0.0 \
-    $EXTRA_OPTIONS
+    ${EXTRA_OPTIONS}
