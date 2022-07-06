@@ -9,12 +9,12 @@ services:
     volumes:
       - "sepolia:/sepolia"
     ports:
-      - "30303"
-      - 30303/udp
-      - 30304/udp
+      - "35415:35415"
+      - "35415:35415/udp"
     restart: unless-stopped
     environment:
       - "EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool"
+      - P2P_PORT=35415
       - OVERRIDE_TTD=17000000000000000
       - SYNCMODE
 volumes:
