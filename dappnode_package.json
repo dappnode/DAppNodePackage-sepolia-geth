@@ -1,7 +1,7 @@
 {
   "name": "sepolia-geth.dnp.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v1.10.20",
+  "upstreamVersion": "v1.10.24",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "A novel PoW-testing network for Ethereum",
@@ -14,20 +14,9 @@
     "Stefaan Ponnet (https://github.com/sponnet)",
     "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)"
   ],
-  "categories": [
-    "Developer tools"
-  ],
-  "keywords": [
-    "ethereum",
-    "testnet",
-    "geth",
-    "sepolia",
-    "pow"
-  ],
-  "architectures": [
-    "linux/amd64",
-    "linux/arm64"
-  ],
+  "categories": ["Developer tools"],
+  "keywords": ["ethereum", "testnet", "geth", "sepolia", "pow"],
+  "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-sepolia-geth#readme",
     "api": "http://sepolia-geth.dappnode:8545"
