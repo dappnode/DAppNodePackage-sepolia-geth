@@ -1,10 +1,10 @@
 {
   "name": "sepolia-geth.dnp.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v1.10.20",
+  "upstreamVersion": "v1.11.6",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
-  "shortDescription": "A novel PoW-testing network for Ethereum",
+  "shortDescription": "A novel PoS-testing network for Ethereum",
   "description": "Geth version for the Sepolia Testnet. Sepolia Testnet is the new, official proof-of-work Ethereum testnet.",
   "type": "library",
   "chain": "ethereum",

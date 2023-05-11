@@ -3,9 +3,9 @@ services:
   sepolia:
     image: "sepolia.sepolia-geth.dnp.dappnode.eth:0.1.0"
     build:
-      context: ./build
+      context: .
       args:
-        UPSTREAM_VERSION: v1.10.20
+        UPSTREAM_VERSION: v1.11.6
     volumes:
       - "sepolia:/sepolia"
     ports:
@@ -15,7 +15,6 @@ services:
     environment:
       - "EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool"
       - P2P_PORT=35415
-      - OVERRIDE_TTD=17000000000000000
       - SYNCMODE
 volumes:
   sepolia: {}
