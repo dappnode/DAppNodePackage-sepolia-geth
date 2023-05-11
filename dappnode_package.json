@@ -1,12 +1,12 @@
 {
   "name": "sepolia-geth.dnp.dappnode.eth",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "upstreamVersion": "v1.11.6",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
-  "shortDescription": "A novel PoS-testing network for Ethereum",
-  "description": "Geth version for the Sepolia Testnet. Sepolia Testnet is the new, official proof-of-work Ethereum testnet.",
-  "type": "library",
+  "shortDescription": "Execution client Geth for Sepolia (a novel PoS-testing network for Ethereum)",
+  "description": "This package provides the Geth client for the Sepolia Testnet, which is the new official proof-of-stake Ethereum testnet. Geth is an execution client that enables interaction with the Ethereum blockchain. With this package, you can easily deploy and run a Sepolia node on your DappNode.",
+  "type": "service",
   "chain": "ethereum",
   "author": "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)",
   "contributors": [
@@ -22,7 +22,7 @@
     "testnet",
     "geth",
     "sepolia",
-    "pow"
+    "pos"
   ],
   "architectures": [
     "linux/amd64",
@@ -30,7 +30,8 @@
   ],
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-sepolia-geth#readme",
-    "api": "http://sepolia-geth.dappnode:8545"
+    "api": "http://sepolia-geth.dappnode:8545",
+    "apiEngine": "http://geth.dappnode:8551"
   },
   "exposable": [
     {
