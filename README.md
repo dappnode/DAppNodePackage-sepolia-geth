@@ -1,4 +1,4 @@
-# DAppNode package Sepolia (Geth)
+# DAppNode package _Sepolia_ (Geth)
 [![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP)
 [![Otterscan Sepolia](https://img.shields.io/badge/Otterscan-Sepolia-blue)](https://sepolia.otterscan.io/)
 
@@ -9,6 +9,22 @@ Sepolia was originally a proof-of-authority testnet created by Ethereum core dev
 Testnets are designed to mimic Ethereum's mainnet environment, and Sepolia was created to simulate harsh network conditions with shorter block times for faster transaction confirmation times.
 
 Unlike other testnets like Goerli, Sepolia's total number of testnet tokens is uncapped, reducing the likelihood of testnet token scarcity for developers.
+
+### APIs
+
+The following JSON-RPC APIs are enabled by default:
+* `http://sepolia-geth.dappnode:8545`
+* `ws://sepolia-geth.dappnode:8546`
+
+To expose these publicly, go to the package's network configuration and create the following entries:
+* Subdomain: `sepolia-geth`, Port: `8545`
+* Subdomain: `sepolia-geth-ws`, Port: `8546`
+
+### Manteinance
+
+|      Updated       |    Champion/s    |
+| :----------------: | :--------------: |
+| :heavy_check_mark: | @q9f |
 
 ### License
 
