@@ -1,41 +1,14 @@
-# DAppNode package _Sepolia_ (Geth)
+# DAppNode package Sepolia (Geth)
 [![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP)
 [![Otterscan Sepolia](https://img.shields.io/badge/Otterscan-Sepolia-blue)](https://sepolia.otterscan.io/)
 
 ![Avatar](avatar-sepolia-geth.png)
 
-Sepolia Testnet is a new, official Ethereum proof-of-work testnet replacing Ropsten and Morden.
+Sepolia was originally a proof-of-authority testnet created by Ethereum core developers in October 2021. It transitioned to a proof-of-stake consensus mechanism after Ropsten testnet reached a Terminal Total Difficulty (TTD) of 50000000000000000.
 
-More information about the official Ethereum testnets can be found here: [ethereum/pm#460](https://github.com/ethereum/pm/issues/460)
+Testnets are designed to mimic Ethereum's mainnet environment, and Sepolia was created to simulate harsh network conditions with shorter block times for faster transaction confirmation times.
 
-### Installation
-
-Install without package manager by looking up the package IPFS hash:
-* http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP (WIFI)
-* http://dappnode.local/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP (LAN)
-
-Signed IPFS hash for verification:
-```
-DNP (DAppNode Package) built and uploaded
-Release hash : /ipfs/QmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP
-http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP
-```
-
-### APIs
-
-The following JSON-RPC APIs are enabled by default:
-* `http://sepolia-geth.dappnode:8545`
-* `ws://sepolia-geth.dappnode:8546`
-
-To expose these publicly, go to the package's network configuration and create the following entries:
-* Subdomain: `sepolia-geth`, Port: `8545`
-* Subdomain: `sepolia-geth-ws`, Port: `8546`
-
-### Manteinance
-
-|      Updated       |    Champion/s    |
-| :----------------: | :--------------: |
-| :heavy_check_mark: | @q9f |
+Unlike other testnets like Goerli, Sepolia's total number of testnet tokens is uncapped, reducing the likelihood of testnet token scarcity for developers.
 
 ### License
 
