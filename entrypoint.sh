@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [[ -n $OVERRIDE_TTD ]] && [[ -n "${EXTRA_OPTIONS##*"--override.terminaltotaldifficulty"*}" ]]; then
-  EXTRA_OPTIONS="$EXTRA_OPTIONS --override.terminaltotaldifficulty ${OVERRIDE_TTD}"
-fi
-
 exec geth --datadir /sepolia \
     --sepolia \
     --port ${P2P_PORT} \
