@@ -1,7 +1,7 @@
 version: "3.5"
 services:
-  sepolia:
-    image: "sepolia.sepolia-geth.dnp.dappnode.eth:0.1.1"
+  geth:
+    image: "geth.sepolia-geth.dnp.dappnode.eth:0.1.1"
     build:
       context: .
       args:
@@ -15,6 +15,6 @@ services:
     environment:
       - "EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool"
       - P2P_PORT=35415
-      - SYNCMODE
+      - SYNCMODE=snap
 volumes:
   sepolia: {}
