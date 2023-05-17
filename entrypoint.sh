@@ -7,7 +7,7 @@ exec geth --datadir /sepolia \
     --http.addr 0.0.0.0 \
     --http.corsdomain "*" \
     --http.vhosts "*" \
-    --ws true \
+    --ws \
     --ws.origins "*" \
     --ws.addr 0.0.0.0 \
     --authrpc.addr 0.0.0.0 \
