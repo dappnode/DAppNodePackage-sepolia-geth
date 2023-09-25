@@ -3,16 +3,14 @@ name: Bump upstream version
 on:
   schedule:
     - cron: "00 */4 * * *"
-  push:
-    branches:
-      - "main"
-
+  workflow_dispatch:
+    
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npx @dappnode/dappnodesdk github-action bump-upstream
+      - run: npx @dappnode/dappnodesdk@latest github-action bump-upstream
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PINATA_API_KEY: ${{ secrets.PINATA_API_KEY }}
