@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        UPSTREAM_VERSION: v1.11.6
+        UPSTREAM_VERSION: v1.13.1
     volumes:
       - "sepolia:/sepolia"
     ports:
@@ -13,7 +13,9 @@ services:
       - "35415:35415/udp"
     restart: unless-stopped
     environment:
-      - "EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool, --ws.api eth,engine,net,web3,txpool"
+      - >-
+        EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool, --ws.api
+        eth,engine,net,web3,txpool
       - P2P_PORT=35415
       - SYNCMODE=snap
 volumes:

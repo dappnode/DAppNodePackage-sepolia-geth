@@ -1,7 +1,7 @@
 {
   "name": "sepolia-geth.dnp.dappnode.eth",
-  "version": "0.1.1",
-  "upstreamVersion": "v1.11.6",
+  "version": "0.1.2",
+  "upstreamVersion": "v1.13.1",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Execution client Geth for Sepolia (a novel PoS-testing network for Ethereum)",
@@ -14,20 +14,9 @@
     "Stefaan Ponnet (https://github.com/sponnet)",
     "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)"
   ],
-  "categories": [
-    "Developer tools"
-  ],
-  "keywords": [
-    "ethereum",
-    "testnet",
-    "geth",
-    "sepolia",
-    "pos"
-  ],
-  "architectures": [
-    "linux/amd64",
-    "linux/arm64"
-  ],
+  "categories": ["Developer tools"],
+  "keywords": ["ethereum", "testnet", "geth", "sepolia", "pos"],
+  "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-sepolia-geth#readme",
     "api": "http://sepolia-geth.dappnode:8545",
