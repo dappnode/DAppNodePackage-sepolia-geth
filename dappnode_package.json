@@ -4,42 +4,43 @@
   "upstreamVersion": "v1.13.1",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
-  "shortDescription": "Execution client Geth for Sepolia (a novel PoS-testing network for Ethereum)",
-  "description": "This package provides the Geth client for the Sepolia Testnet, which is the new official proof-of-stake Ethereum testnet. Geth is an execution client that enables interaction with the Ethereum blockchain. With this package, you can easily deploy and run a Sepolia node on your DappNode.",
+  "shortDescription": "Execution client Geth for Sepolia (a PoS test network for Ethereum)",
+  "description": "This package provides the Geth client for the Sepolia Testnet, which is an official, but permissioned, proof-of-stake Ethereum testnet. Sepolia Geth is an execution client that enables interaction with the Ethereum blockchain in conjuction with a Consensus Layer Client. With this package, you can easily deploy and run a Sepolia Geth node on your Dappnode.",
   "type": "service",
   "chain": "ethereum",
   "author": "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
-    "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)"
+    "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)",
+    "Voss <voss@visnovalabs.io> (https://github.com/alexpeterson91)"
   ],
-  "categories": ["Developer tools"],
+  "categories": ["Developer tools", "Blockchain"],
   "keywords": ["ethereum", "testnet", "geth", "sepolia", "pos"],
   "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-sepolia-geth#readme",
-    "api": "http://sepolia-geth.dappnode:8545",
-    "apiEngine": "http://geth.dappnode:8551"
+    "api": "http://geth.sepolia-geth.dappnode:8545",
+    "apiEngine": "http://geth.sepolia-geth.dappnode:8551"
   },
   "exposable": [
     {
       "name": "Sepolia Geth JSON-RPC (HTTP)",
-      "description": "HTTP-JSON-RPC endpoint for Sepolia testnet",
-      "serviceName": "sepolia-geth",
-      "port": 8545,
-      "exposeByDefault": false
+      "description": "JSON-RPC endpoint for Sepolia Geth",
+      "serviceName": "geth",
+      "fromSubdomain": "sepolia-geth",
+      "port": 8545
     },
     {
       "name": "Sepolia Geth JSON-RPC (WS)",
-      "description": "WS-JSON-RPC endpoint for Sepolia testnet",
-      "serviceName": "sepolia-geth-ws",
-      "port": 8546,
-      "exposeByDefault": false
+      "description": "JSON-RPC WebSocket endpoint for Sepolia Geth",
+      "serviceName": "geth",
+      "fromSubdomain": "sepolia-geth",
+      "port": 8546
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dappnode/DAppNodePackage-sepolia-geth.git"
+    "url": "git+https://github.com/dappnode/DAppNodePackage-sepolia-geth.git"
   },
   "bugs": {
     "url": "https://github.com/dappnode/DAppNodePackage-sepolia-geth/issues"
