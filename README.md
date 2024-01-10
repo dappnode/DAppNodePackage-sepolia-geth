@@ -1,4 +1,5 @@
-# DAppNode package _Sepolia_ (Geth)
+# DAppNode Package Sepolia Geth
+
 [![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.dappnode/#/installer/%2Fipfs%2FQmWz6qUN8jTqxvnVKMwEjTXdwQaYLiwhMFikfZjBaABEWP)
 [![Otterscan Sepolia](https://img.shields.io/badge/Otterscan-Sepolia-blue)](https://sepolia.otterscan.io/)
 
@@ -12,13 +13,11 @@ Unlike other testnets like Goerli, Sepolia's total number of testnet tokens is u
 
 ### APIs
 
-The following JSON-RPC APIs are enabled by default:
-* `http://sepolia-geth.dappnode:8545`
-* `ws://sepolia-geth.dappnode:8546`
+The following JSON-RPC APIs are enabled and available over VPN or to other packages on your Dappnode (but not exposed to the open Internet) by default:
+* `http://geth.sepolia-geth.dappnode:8545`
+* `ws://geth.sepolia-geth.dappnode:8546`
 
-To expose these publicly, go to the package's network configuration and create the following entries:
-* Subdomain: `sepolia-geth`, Port: `8545`
-* Subdomain: `sepolia-geth-ws`, Port: `8546`
+To expose either publicly to the open internet using HTTPS to secure your API connection with TLS, go to the HTTPS Portal and Toggle the RPC endpoint you want to expose, WebSocket or HTTP and it will generate a link for you.  Only one of these 2 predefined endpoints can be exposed at a time.
 
 ### Manteinance
 
