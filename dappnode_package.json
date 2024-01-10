@@ -20,22 +20,22 @@
   "links": {
     "homepage": "https://github.com/dappnode/DAppNodePackage-sepolia-geth#readme",
     "api": "http://sepolia-geth.dappnode:8545",
-    "apiEngine": "http://geth.dappnode:8551"
+    "apiEngine": "http://sepolia-geth.dappnode:8551"
   },
   "exposable": [
     {
       "name": "Sepolia Geth JSON-RPC (HTTP)",
-      "description": "HTTP-JSON-RPC endpoint for Sepolia testnet",
+      "description": "TLS secured HTTP JSON-RPC endpoint for Sepolia testnet",
       "serviceName": "sepolia-geth",
-      "port": 8545,
-      "exposeByDefault": false
+      "fromSubdomain": "sepolia-geth-https",
+      "port": 8545
     },
     {
       "name": "Sepolia Geth JSON-RPC (WS)",
-      "description": "WS-JSON-RPC endpoint for Sepolia testnet",
-      "serviceName": "sepolia-geth-ws",
-      "port": 8546,
-      "exposeByDefault": false
+      "description": "TLS secured Websocket JSON-RPC endpoint for Sepolia testnet",
+      "serviceName": "sepolia-geth",
+      "fromSubdomain": "sepolia-geth-wss",
+      "port": 8546
     }
   ],
   "repository": {
