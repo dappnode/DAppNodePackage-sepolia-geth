@@ -5,16 +5,18 @@
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Execution client Geth for Sepolia (a novel PoS-testing network for Ethereum)",
-  "description": "This package provides the Geth client for the Sepolia Testnet, which is the new official proof-of-stake Ethereum testnet. Geth is an execution client that enables interaction with the Ethereum blockchain. With this package, you can easily deploy and run a Sepolia node on your DappNode.",
+  "description": "This package provides the Geth client for the Sepolia Testnet, which is an official, but permissioned, proof-of-stake Ethereum testnet. Geth is an execution client that enables interaction with the Ethereum blockchain. With this package, you can easily deploy and run a Sepolia node on your Dappnode.",
   "type": "service",
+  "mainService": "sepolia-geth",
   "chain": "ethereum",
   "author": "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
+    "Voss <voss@visnovalabs.io> (https://github.com/alexpeterson91)",
     "Stefaan Ponnet (https://github.com/sponnet)",
     "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)"
   ],
-  "categories": ["Developer tools"],
+  "categories": ["Developer tools", "blockchain"],
   "keywords": ["ethereum", "testnet", "geth", "sepolia", "pos"],
   "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
@@ -27,14 +29,14 @@
       "name": "Sepolia Geth JSON-RPC (HTTP)",
       "description": "TLS secured HTTP JSON-RPC endpoint for Sepolia testnet",
       "serviceName": "sepolia-geth",
-      "fromSubdomain": "sepolia-geth-https",
+      "fromSubdomain": "http-sepolia-geth",
       "port": 8545
     },
     {
       "name": "Sepolia Geth JSON-RPC (WS)",
       "description": "TLS secured Websocket JSON-RPC endpoint for Sepolia testnet",
       "serviceName": "sepolia-geth",
-      "fromSubdomain": "sepolia-geth-wss",
+      "fromSubdomain": "ws-sepolia-geth",
       "port": 8546
     }
   ],
