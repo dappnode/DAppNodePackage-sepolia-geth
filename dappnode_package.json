@@ -41,7 +41,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dappnode/DAppNodePackage-sepolia-geth.git"
+    "url": "git+https://github.com/dappnode/DAppNodePackage-sepolia-geth.git"
   },
   "bugs": {
     "url": "https://github.com/dappnode/DAppNodePackage-sepolia-geth/issues"
