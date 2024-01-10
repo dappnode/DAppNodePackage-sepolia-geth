@@ -16,7 +16,7 @@
     "Stefaan Ponnet (https://github.com/sponnet)",
     "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)"
   ],
-  "categories": ["Developer tools", "blockchain"],
+  "categories": ["Developer tools", "Blockchain"],
   "keywords": ["ethereum", "testnet", "geth", "sepolia", "pos"],
   "architectures": ["linux/amd64", "linux/arm64"],
   "links": {
