@@ -9,12 +9,12 @@ services:
     volumes:
       - "sepolia:/sepolia"
     ports:
-      - "35415:35415"
+      - "35415:35415/tcp"
       - "35415:35415/udp"
     restart: unless-stopped
     environment:
       - >-
-        EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool, --ws.api
+        EXTRA_OPTIONS=--http.api eth,engine,net,web3,txpool --ws.api
         eth,engine,net,web3,txpool
       - P2P_PORT=35415
       - SYNCMODE=snap
