@@ -1,7 +1,7 @@
 {
   "name": "sepolia-geth.dnp.dappnode.eth",
   "version": "0.1.2",
-  "upstreamVersion": "v1.13.1",
+  "upstreamVersion": "v1.13.11",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Execution client Geth for Sepolia (a PoS test network for Ethereum)",
