@@ -5,7 +5,7 @@
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "Execution client Geth for Sepolia (a PoS test network for Ethereum)",
-  "description": "This package provides the Geth client for the Sepolia Testnet, which is an official, but permissioned, proof-of-stake Ethereum testnet. Sepolia Geth is an execution client that enables interaction with the Ethereum blockchain in conjuction with a Consensus Layer Client. With this package, you can easily deploy and run a Sepolia Geth node on your Dappnode.",
+  "description": "This package provides the Geth client for the Sepolia Testnet, which is an official, proof-of-stake Ethereum testnet. Sepolia Geth is an execution client that enables interaction with the Ethereum blockchain in conjuction with a Consensus Layer Client. With this package, you can easily deploy and run a Sepolia Geth node on your Dappnode.",
   "type": "service",
   "chain": "ethereum",
   "author": "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)",
