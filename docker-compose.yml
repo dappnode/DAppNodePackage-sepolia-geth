@@ -1,20 +1,22 @@
 version: "3.5"
 services:
   geth:
-    image: "geth.sepolia-geth.dnp.dappnode.eth:0.1.1"
+    image: geth.sepolia-geth.dnp.dappnode.eth:0.1.1
     build:
       context: .
       args:
-        UPSTREAM_VERSION: v1.13.14
+        UPSTREAM_VERSION: v1.13.15
     volumes:
-      - "sepolia:/sepolia"
+      - sepolia:/sepolia
     ports:
-      - "35415:35415/tcp"
-      - "35415:35415/udp"
+      - 35415:35415/tcp
+      - 35415:35415/udp
     restart: unless-stopped
     environment:
-      EXTRA_OPTIONS: "--http.api eth,engine,net,web3,txpool --ws.api eth,engine,net,web3,txpool"
+      EXTRA_OPTIONS: >-
+        --http.api eth,engine,net,web3,txpool --ws.api
+        eth,engine,net,web3,txpool
       P2P_PORT: 35415
-      SYNCMODE: "snap"
+      SYNCMODE: snap
 volumes:
   sepolia: {}
