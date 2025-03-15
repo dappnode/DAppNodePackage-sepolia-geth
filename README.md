@@ -1,6 +1,6 @@
 # DAppNode Package Sepolia Geth
 
-[![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.dappnode/installer/dnp/sepolia-geth.dnp.dappnode.eth)
+[![Build](https://github.com/dappnode/DAppNodePackage-sepolia-geth/actions/workflows/auto_check.yml/badge.svg)](https://github.com/dappnode/DAppNodePackage-sepolia-geth/actions/workflows/auto_check.yml)
 [![Otterscan Sepolia](https://img.shields.io/badge/Otterscan-Sepolia-blue)](https://sepolia.otterscan.io/)
 
 ![Avatar](avatar-sepolia-geth.png)
