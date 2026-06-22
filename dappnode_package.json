@@ -1,49 +1,61 @@
 {
-  "name": "sepolia-geth.dnp.dappnode.eth",
-  "version": "0.1.3",
-  "upstreamVersion": "v1.15.10",
-  "upstreamRepo": "ethereum/go-ethereum",
-  "upstreamArg": "UPSTREAM_VERSION",
-  "shortDescription": "Execution client Geth for Sepolia (a PoS test network for Ethereum)",
-  "description": "This package provides the Geth client for the Sepolia Testnet, which is an official, proof-of-stake Ethereum testnet. Sepolia Geth is an execution client that enables interaction with the Ethereum blockchain in conjuction with a Consensus Layer Client. With this package, you can easily deploy and run a Sepolia Geth node on your Dappnode.",
-  "type": "service",
-  "chain": "ethereum",
+  "architectures": [
+    "linux/amd64",
+    "linux/arm64"
+  ],
   "author": "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)",
+  "bugs": {
+    "url": "https://github.com/dappnode/DAppNodePackage-sepolia-geth/issues"
+  },
+  "categories": [
+    "Developer tools",
+    "Blockchain"
+  ],
+  "chain": "ethereum",
   "contributors": [
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "Afri Schoedon <dappnode@q9f.cc> (https://github.com/q9f)",
     "Voss <voss@visnovalabs.io> (https://github.com/alexpeterson91)"
   ],
-  "categories": ["Developer tools", "Blockchain"],
-  "keywords": ["ethereum", "testnet", "geth", "sepolia", "pos"],
-  "architectures": ["linux/amd64", "linux/arm64"],
-  "links": {
-    "homepage": "https://github.com/dappnode/DAppNodePackage-sepolia-geth#readme",
-    "api": "http://geth.sepolia-geth.dappnode:8545",
-    "apiEngine": "http://geth.sepolia-geth.dappnode:8551"
-  },
+  "description": "This package provides the Geth client for the Sepolia Testnet, which is an official, proof-of-stake Ethereum testnet. Sepolia Geth is an execution client that enables interaction with the Ethereum blockchain in conjuction with a Consensus Layer Client. With this package, you can easily deploy and run a Sepolia Geth node on your Dappnode.",
   "exposable": [
     {
-      "name": "Sepolia Geth JSON-RPC (HTTP)",
       "description": "JSON-RPC endpoint for Sepolia Geth",
-      "serviceName": "geth",
       "fromSubdomain": "sepolia-geth",
-      "port": 8545
+      "name": "Sepolia Geth JSON-RPC (HTTP)",
+      "port": 8545,
+      "serviceName": "geth"
     },
     {
-      "name": "Sepolia Geth JSON-RPC (WS)",
       "description": "JSON-RPC WebSocket endpoint for Sepolia Geth",
-      "serviceName": "geth",
       "fromSubdomain": "sepolia-geth",
-      "port": 8546
+      "name": "Sepolia Geth JSON-RPC (WS)",
+      "port": 8546,
+      "serviceName": "geth"
     }
   ],
+  "keywords": [
+    "ethereum",
+    "testnet",
+    "geth",
+    "sepolia",
+    "pos"
+  ],
+  "license": "GPL-3.0",
+  "links": {
+    "api": "http://geth.sepolia-geth.dappnode:8545",
+    "apiEngine": "http://geth.sepolia-geth.dappnode:8551",
+    "homepage": "https://github.com/dappnode/DAppNodePackage-sepolia-geth#readme"
+  },
+  "name": "sepolia-geth.dnp.dappnode.eth",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dappnode/DAppNodePackage-sepolia-geth.git"
   },
-  "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-sepolia-geth/issues"
-  },
-  "license": "GPL-3.0"
+  "shortDescription": "Execution client Geth for Sepolia (a PoS test network for Ethereum)",
+  "type": "service",
+  "upstreamArg": "UPSTREAM_VERSION",
+  "upstreamRepo": "ethereum/go-ethereum",
+  "upstreamVersion": "v1.17.4",
+  "version": "0.1.4"
 }
